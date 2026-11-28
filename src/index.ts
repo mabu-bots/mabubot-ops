@@ -7,12 +7,7 @@
 // ------------------------------------------
 // 📥 インポート
 // ------------------------------------------
-import {
-  Client,
-  EmbedBuilder,
-  GatewayIntentBits,
-  Partials,
-} from "discord.js";
+import { Client, EmbedBuilder, GatewayIntentBits, Partials } from "discord.js";
 import { MabusabaStore } from "./store.js";
 import { handleChatInputCommand } from "./commands.js";
 import { registerEvents } from "./events.js";
@@ -62,7 +57,10 @@ const scheduler = new OpsScheduler({
   store,
   execute: createScheduleExecutor(client, store),
   onError: (schedule, error) => {
-    console.error(`[mabubot-ops] scheduled job failed (${schedule.id}):`, error);
+    console.error(
+      `[mabubot-ops] scheduled job failed (${schedule.id}):`,
+      error,
+    );
   },
 });
 

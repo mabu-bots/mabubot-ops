@@ -91,11 +91,14 @@ export function startPresenceCycle(client: Client): void {
   if (timer !== null) return;
   const tick = (): void => {
     const { sendAt, boundary } = nextPresenceSend(Date.now());
-    timer = setTimeout(() => {
-      // 値は送信時刻ではなく境界時点のものを使う（先行送信）
-      applyPresence(client, new Date(boundary));
-      tick();
-    }, Math.max(0, sendAt - Date.now()));
+    timer = setTimeout(
+      () => {
+        // 値は送信時刻ではなく境界時点のものを使う（先行送信）
+        applyPresence(client, new Date(boundary));
+        tick();
+      },
+      Math.max(0, sendAt - Date.now()),
+    );
     timer.unref?.();
   };
   tick();

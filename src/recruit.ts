@@ -122,7 +122,10 @@ export function scheduleRecruitClose(
   const delay = recruit.starts_at_ms - Date.now();
   if (delay <= 0) {
     void closeRecruit(client, store, recruit).catch((error: unknown) => {
-      console.error(`[mabubot-ops] recruit close failed (${recruit.id}):`, error);
+      console.error(
+        `[mabubot-ops] recruit close failed (${recruit.id}):`,
+        error,
+      );
     });
     return;
   }

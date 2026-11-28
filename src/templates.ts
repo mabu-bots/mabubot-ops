@@ -173,8 +173,8 @@ export function listTemplateIds(): string[] {
 // <#...> のチャンネル参照は通知を発しないため、そのまま残す。
 export function sanitizeMentions(text: string): string {
   return text
-    .replaceAll("@​everyone", "@âeveryone")
-    .replaceAll("@​here", "@âhere")
+    .replaceAll("@everyone", "@\u200beveryone")
+    .replaceAll("@here", "@\u200bhere")
     .replace(/<@!?\d+>/g, "@ユーザー")
     .replace(/<@&\d+>/g, "@ロール");
 }
