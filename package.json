@@ -4,7 +4,7 @@
   },
   "description": "Discord bot for the Mabusaba server (operations group): welcome messages, auto-roles, polls, recruitment, timers, and the operations scheduler with a draft approval flow. Split from mabubot; standalone, no connection to the other bots.",
   "devDependencies": {
-    "@types/node": "26.6.6",
+    "@types/node": "26.6.9",
     "prettier": "3.10.1",
     "tsx": "4.23.15",
     "typescript": "7.0.2"
